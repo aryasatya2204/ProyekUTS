@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"/> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
+    <link rel="stylesheet" href="../style/style.css" />
+    <style>
+      .navbar {
+        background-color: white !important;
+        border-bottom: 1px solid #dee2e6;
+      }
+      .navbar-brand {
+        font-weight: 500;
+      }
+      .nav-link .bi-cart {
+        font-size: 24px;
+        margin-right: 15px;
+      }
+      .cart-link {
+        position: relative; /* Makes it the parent for the absolute-positioned badge */
+      }
+
+      #cart-count {
+        position: absolute; /* Allows the badge to be positioned relative to the cart icon */
+        top: -10px; /* Adjusts the vertical position of the badge */
+        right: -10px; /* Adjusts the horizontal position */
+        transform: translate(
+          50%,
+          -50%
+        ); /* Centers the badge in the top-right corner */
+        font-size: 12px; /* Adjusts the size of the badge */
+        padding: 4px 6px; /* Adjusts padding inside the badge */
+        border-radius: 50%; /* Ensures the badge is circular */
+        z-index: 10; /* Ensures it stays above the icon */
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">I-Click</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="d-flex align-items-center ms-auto">
+            <a href="../Dashboard/cart-page.html" class="nav-link me-3">
+              <i class="bi bi-cart"></i>
+            </a>
+            <div id="loginStateContainer">
+              <!-- Login state content -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container my-5">
+      <div class="row hero-section p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center">
+        <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+          <h1 class="display-4 fw-bold lh-1">
+            Selamat Datang di I-Click Official Store
+          </h1>
+          <h2 class="display-8 fw-bold lh-4">
+            Partner of <span id="typed-text"></span>
+          </h2>
+
+          <p class="lead">
+            Temukan berbagai produk berkualitas dengan harga terbaik. Belanja
+            mudah, aman, dan terpercaya.
+          </p>
+          <div
+            class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3"
+          >
+            <button
+              type="button"
+              class="btn btn-primary btn-lg px-4 me-md-2 fw-bold"
+            >
+              <a href="#products">Belanja Sekarang</a>
+            </button>
+          </div>
+        </div>
+        <div data-aos="zoom-in" class="col-lg-5 p-0 hero-image-container">
+          <div
+            id="heroCarousel"
+            class="carousel slide hero-carousel"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-indicators">
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="0"
+                class="active"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="1"
+              ></button>
+              <button
+                type="button"
+                data-bs-target="#heroCarousel"
+                data-bs-slide-to="2"
+              ></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../Images/3Didaw.jpg" alt="Gambar 1" />
+              </div>
+              <div class="carousel-item">
+                <img src="../Images/aborigin.jpg" alt="Gambar 2" />
+              </div>
+              <div class="carousel-item">
+                <img src="../Images/Binary.png" alt="Gambar 3" />
+              </div>
+            </div>
+
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide="prev"
+            >
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide="next"
+            >
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Daftar Isi Produk -->
+    <section id="products" class="container my-5">
+      <h2 class="text-center">Daftar Produk</h2>
+      <div class="container mt-4 mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Product 3Didaw</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft1">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight1">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container1">
+            <div class="card product-card">
+              <img
+                src="../Images/3daw.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <p id="hidden-description" class="d-none">
+                    Ini adalah teks yang disembunyikan.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3daw2.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Cookies Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp75.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <p class="hidden-decription d-none">
+                    Ini adalah teks yang disembunyikan.
+                  </p>
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3daw3.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp100.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/3didaw4.jpg"
+                class="card-img-top product-image"
+                style="background-color: rgb(135, 185, 58)"
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Legos Asset - Ciptakan imajinasimu
+                </h5>
+                <p class="product-price mb-0">Rp500.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0006.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0007.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0008.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0009.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0010.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0011.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0012.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0013.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp38.250</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0014.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  3D Models Perfume Asset - Untuk Produk Anda
+                </h5>
+                <p class="product-price mb-0">Rp90.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Products The Aborigin</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft2">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight2">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container2">
+            <div class="card product-card">
+              <img
+                src="../Images/baju3-removebg-preview.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Jon Parker</h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju4-removebg-preview.png"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Official Shirt</h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju5.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Baju Pillar</h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/baju6.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Baju Vegan</h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img src="/" class="card-img-top product-image" alt="" />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Poster Motivasi - Sukses Itu 99% Keringat
+                </h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <!-- <p class="product-original-price mb-1">Rp45.000 <span class="product-discount">-15%</span></p> -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src=""
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Poster Motivasi - Sukses Itu 99% Keringat
+                </h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <!-- <p class="product-original-price mb-1">Rp45.000 <span class="product-discount">-15%</span></p> -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src=""
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Poster Motivasi - Sukses Itu 99% Keringat
+                </h5>
+                <p class="product-price mb-0">Rp69.000</p>
+                <!-- <p class="product-original-price mb-1">Rp45.000 <span class="product-discount">-15%</span></p> -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src=""
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Poster Motivasi - Sukses Itu 99% Keringat
+                </h5>
+                <p class="product-price mb-0">Rp38.250</p>
+                <!-- <p class="product-original-price mb-1">Rp45.000 <span class="product-discount">-15%</span></p> -->
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src=""
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">
+                  Poster Motivasi - Sukses Itu 99% Keringat
+                </h5>
+                <p class="product-price mb-0">Rp38.250</p>
+                <p class="product-original-price mb-1">
+                  Rp45.000 <span class="product-discount">-15%</span>
+                </p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0">Binary Bites</h5>
+          <a href="#" class="text-primary text-decoration-none"
+            >Lihat Semua Barang</a
+          >
+        </div>
+        <div class="products-scroll-container">
+          <button class="scroll-button scroll-left hidden" id="scrollLeft3">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="scroll-button scroll-right" id="scrollRight3">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+          <div class="products-container g-4" id="container3">
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0018.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Brownies</h5>
+                <p class="product-price mb-0">Rp15.000 - Rp 18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0019.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Brownies</h5>
+                <p class="product-price mb-0">Rp15.000 - Rp 18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0020.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Melted Brownies</h5>
+                <p class="product-price mb-0">Rp18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0021.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Melted Brownies</h5>
+                <p class="product-price mb-0">Rp18.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0022.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0023.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0024.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Crispy Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <div class="card product-card">
+              <img
+                src="../Images/IMG-20241022-WA0025.jpg"
+                class="card-img-top product-image"
+                alt=""
+              />
+              <div class="card-body p-2">
+                <h5 class="card-title product-title">Cookies Brownies</h5>
+                <p class="product-price mb-0">Rp15.000</p>
+                <div
+                  class="d-flex justify-content-between align-items-center mt-4"
+                >
+                  <span class="product-rating">★ 0</span>
+                  <span class="product-sold">Terjual 0</span>
+                </div>
+                <p class="product-location mb-0">Medan</p>
+              </div>
+            </div>
+            <!-- Tambah produk lain di sini -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="../Script/script.js"></script>
+    <script src="../Script/nav.js"></script>
+    <script src="../Script/hero.js"></script>
+    <script src="../Script/img.js"></script>
+    <script src="../Script/handler.js"></script>
+    <script src="../Script/product-detail.js"></script>
+    <script src="../Script/cart-page.js"></script>
+    <script src="../Script/Shopping-cart.js"></script>
+
+    <script>
+      feather.replace();
+    </script>
+  </body>
+</html>
